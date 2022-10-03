@@ -1,14 +1,17 @@
 import { createStore } from 'vuex'
 
+const moduleA = {
+  state:[username:'zs'],
+}
+
+const moduleB = {
+  state:[username:'zs'],
+}
+
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    moduleA,
+    moduleB
   }
 })
+
