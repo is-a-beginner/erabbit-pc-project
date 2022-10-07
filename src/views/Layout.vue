@@ -3,7 +3,11 @@
   <AppTopNav></AppTopNav>
 
   <!-- 头部通栏 -->
-  <AppHeader></AppHeader>
+  <AppHeader>
+  </AppHeader>
+
+   <!-- 吸顶头部 -->
+   <AppHeaderSticky></AppHeaderSticky>
 
   <!-- 内容容器 -->
   <div class="main">
@@ -19,13 +23,20 @@
   import AppTopNav from '@/components/app-topnav.vue'
   import AppHeader from '@/components/app-header.vue'
   import AppFooter from '@/components/app-footer.vue'
+  import AppHeaderSticky from '@/components/app-header-sticky.vue'
+  import { useStore } from 'vuex'
 
 export default {
   name: 'Layout',
   components: {
     AppTopNav,
     AppHeader,
-    AppFooter
+    AppFooter,
+    AppHeaderSticky
+  },
+  setup () {
+    const store = useStore()
+    store.dispatch('category/getList')
   }
 }
 </script>
