@@ -78,7 +78,6 @@ export default {
     return list
     })
 
-    console.log(menuList);
     //得到弹出层的推荐商品数据
     const categoryId = ref(null)
     const currCategory = computed(() => {
