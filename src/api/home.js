@@ -34,5 +34,25 @@ export const findBanner = () => {
   return request('home/hot', 'get')
 }
 
+/**
+ * 获取商品区块数据
+ * @returns Promise
+ */
+ export const findGoods = () => {
+  return request('home/goods', 'get')
+}
+
+/**
+ * 获取最新专题数据
+ * @returns Promise
+ */
+ export const findSpecial = () => {
+  return request('home/special', 'get')
+}
+
+
+
+
+
 
 
