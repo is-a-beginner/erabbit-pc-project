@@ -12,5 +12,6 @@ module.exports = defineConfig({
         path.join(__dirname, './src/assets/styles/mixins.less'),
       ]
     }
-  }
+  },
+  
 })
