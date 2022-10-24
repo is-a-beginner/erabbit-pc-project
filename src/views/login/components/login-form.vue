@@ -151,15 +151,17 @@ export default {
         }
         const { id, account, avatar, mobile, nickname, token } = data.result
         store.commit('user/setUser', { id, account, avatar, mobile, nickname, token })
-        // 进行跳转
-        router.push(route.query.redirectUrl || '/') 
-        // 消息成功提示
-        Message({ type: 'success', text: '登录成功' })
-      } catch (e) {
+        store.dispatch('cart/mergeLocalCart').then(() => {
+          // 进行跳转
+          router.push(route.query.redirectUrl || '/') 
+         // 消息成功提示
+          Message({ type: 'success', text: '登录成功' })
+        })
+       } catch (e) {
         if (e.response.data) {
           Message({ type: 'error', text: e.response.data.message || '登录失败' })
         }
-       }
+      }
     } 
    }
     // pause 暂停 resume 开始
