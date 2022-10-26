@@ -73,7 +73,6 @@ export default {
       }
       // 记录选择后的sku 
       currSku.value = sku
-      console.log(currSku.value);
     }
     // 选择的数量
     const num = ref(1)
